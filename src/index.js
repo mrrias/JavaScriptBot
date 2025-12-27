@@ -16,13 +16,14 @@ client.on('clientReady', (c) => {
 });
 
 // Message reply
+const greetings = ['hello', 'hey', 'hi']
 client.on('messageCreate', (msg) => {
     if (msg.author.bot) {
         return;
     }
 
-    if (msg.content === 'Hello') {
-        msg.reply('Hey, How are you today?');
+    if (greetings.includes(msg.content.toLowerCase())) {
+        msg.reply("Hiya, I am kitty!");
     }
 });
 
