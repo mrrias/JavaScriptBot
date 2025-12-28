@@ -1,7 +1,7 @@
 {
   "name": "discord-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"# JsBot\" \r \"# JsBot\" \r \"# JsBot\" \r #\u0000 \u0000J\u0000a\u0000v\u0000a\u0000S\u0000c\u0000r\u0000i\u0000p\u0000t\u0000B\u0000o\u0000t\u0000\r\u0000 \u0000\"# JavaScriptBot\" \r \"# JavaScriptBot\"",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +13,17 @@
   "dependencies": {
     "discord.js": "^14.25.1",
     "dotenv": "^17.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrrias/JavaScriptBot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrrias/JavaScriptBot/issues"
+  },
+  "homepage": "https://github.com/mrrias/JavaScriptBot#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2"
   }
 }
