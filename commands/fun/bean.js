@@ -27,11 +27,11 @@ module.exports = {
 
         if (reason) {
             await interaction.reply (
-                `${user} beaned for ${reason}`
+                `**${user} has been banned** \n-# by <@${interaction.user.id}> \n\n**Reason:** \n> ${reason} \n\n-# *This is a joke ofc*`
             )
         } else {
             await interaction.reply (
-                `${user} has been beaned!`
+                `**${user} has been banned** \n-# by <@${interaction.user.id}> \n\n-# *This is a joke ofc*`
             )
         }
     }

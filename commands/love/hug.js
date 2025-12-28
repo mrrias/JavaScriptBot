@@ -4,7 +4,7 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('hug')
-    .setDescription('Spread love<3')
+    .setDescription('Spread love through the power of hugs')
     .addStringOption((option) => 
         option.setName('user')
         .setDescription('user')
