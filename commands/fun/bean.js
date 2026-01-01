@@ -1,13 +1,14 @@
 // To do
 // Add embed
 
-const { SlashCommandBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { embedColor } = require("../variables/vars.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("bean")
     .setDescription("Ban members")
-    .addStringOption((option) =>
+    .addUserOption((option) =>
       option.setName("user").setDescription("user").setRequired(true)
     )
     .addStringOption((option) =>
@@ -18,17 +19,27 @@ module.exports = {
     ),
 
   async execute(interaction) {
-    const user = interaction.options.getString("user");
+    const user = interaction.options.getUser("user");
     const reason = interaction.options.getString("reason");
 
+    await interaction.reply(`-# *Banning...*`);
+
     if (reason) {
-      await interaction.reply(
-        `**${user} has been banned** \n-# by <@${interaction.user.id}> \n\n**Reason:** \n> ${reason} \n\n-# *This is a joke ofc*`
-      );
+      const beanEmbed = new EmbedBuilder()
+        .setDescription(`${user} was banned by <@${interaction.user.id}>`)
+        .setColor(embedColor);
+
+      await interaction.editReply({
+        embeds: [beanEmbed],
+      });
     } else {
-      await interaction.reply(
-        `**${user} has been banned** \n-# by <@${interaction.user.id}> \n\n-# *This is a joke ofc*`
-      );
+      const beanEmbed = new EmbedBuilder()
+        .setDescription(`${user} was banned by <@${interaction.user.id}>`)
+        .setColor(embedColor);
+
+      await interaction.editReply({
+        embeds: [beanEmbed],
+      });
     }
   },
 };

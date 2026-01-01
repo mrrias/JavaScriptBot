@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { embedColor } = require("../variables/vars.js");
 const fs = require("fs").promises;
 const path = require("path");
 
@@ -46,7 +47,7 @@ module.exports = {
       const hugEmbed = new EmbedBuilder()
         .setDescription(`<@${interaction.user.id}> hugs ${user}`)
         .setImage(hugGif)
-        .setColor(0xffc0cb);
+        .setColor(embedColor);
 
       await interaction.editReply({
         embeds: [hugEmbed],
@@ -55,7 +56,7 @@ module.exports = {
       const hugEmbed = new EmbedBuilder()
         .setDescription(`<@${interaction.user.id}> hugs themselves!`)
         .setImage(hugGif)
-        .setColor(0xffc0cb);
+        .setColor(embedColor);
 
       await interaction.editReply({
         embeds: [hugEmbed],

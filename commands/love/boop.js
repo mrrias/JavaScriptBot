@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { embedColor } = require("../variables/vars.js");
 const fs = require("fs").promises;
 const path = require("path");
 
@@ -49,7 +50,7 @@ module.exports = {
       const boopEmbed = new EmbedBuilder()
         .setDescription(`<@${interaction.user.id}> boops ${user}`)
         .setImage(boopGif)
-        .setColor(0xffc0cb);
+        .setColor(embedColor);
 
       await interaction.editReply({
         embeds: [boopEmbed],
@@ -58,7 +59,7 @@ module.exports = {
       const boopEmbed = new EmbedBuilder()
         .setDescription(`<@${interaction.user.id}> boops themselves!`)
         .setImage(boopGif)
-        .setColor(0xffc0cb);
+        .setColor(embedColor);
 
       await interaction.editReply({
         embeds: [boopEmbed],
