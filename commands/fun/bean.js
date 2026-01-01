@@ -1,6 +1,3 @@
-// To do
-// Add embed
-
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const { embedColor } = require("../variables/vars.js");
 
@@ -26,9 +23,12 @@ module.exports = {
 
     if (reason) {
       const beanEmbed = new EmbedBuilder()
-        .setDescription(`${user} was banned by <@${interaction.user.id}>`)
+        .setDescription(
+          `${user} was banned by <@${interaction.user.id}> \n\n**Reason:** ${reason}`
+        )
         .setColor(embedColor);
 
+      await interaction.editReply(`-# User banned!`);
       await interaction.editReply({
         embeds: [beanEmbed],
       });
@@ -37,6 +37,7 @@ module.exports = {
         .setDescription(`${user} was banned by <@${interaction.user.id}>`)
         .setColor(embedColor);
 
+      await interaction.editReply(`-# User banned!`);
       await interaction.editReply({
         embeds: [beanEmbed],
       });
