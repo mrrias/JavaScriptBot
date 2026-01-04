@@ -5,9 +5,13 @@ Today :
     + Rename folder "serious" -> "actions"
     + Move /bean to action
     + Add /bonk
-    - Add /wave
-    - Add /thumbsup
-    - Push changes
+    + Add /wave
+    + Add /thumbsup
+    + Fix /boop
+    + Push changes
+
+    + Add /truck cmd
+    x Add random gifs to /truck
     - Look into free deploy for bot
 
 

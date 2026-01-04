@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const { embedColor } = require("../variables/vars.js");
 const fs = require("fs").promises;
 const path = require("path");
-const { execute } = require("../actions/bean.js");
+const { execute } = require("../fun/bean.js");
 
 // get gif
 async function getThumbsupGif() {
