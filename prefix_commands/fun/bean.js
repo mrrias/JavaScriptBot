@@ -1,4 +1,4 @@
-const { EmbedBuilder, ContainerBuilder, MessageFlags } = require("discord.js");
+const { ContainerBuilder, MessageFlags } = require("discord.js");
 const { embedColor } = require("../../variables/vars.js");
 
 module.exports = {
@@ -12,17 +12,24 @@ module.exports = {
     }
 
     if (!user) {
-      const errorEmbed = new EmbedBuilder()
-        .setTitle("You must provide a mention or a valid user ID.")
-        .addFields(
-          { name: "Required:", value: "-bean {@user}" },
-          { name: "Optional:", value: "-bean {@user} {reason}" }
+      const erroEmbed = new ContainerBuilder()
+        .addTextDisplayComponents((textDisplay) =>
+          textDisplay.setContent(
+            `**You must provide a mention or a valid user ID.**`
+          )
         )
-        .setTimestamp()
-        .setColor(embedColor);
+        .addSeparatorComponents((divider) => divider)
+        .addTextDisplayComponents((textDisplay) =>
+          textDisplay.setContent(
+            `**Required** \n-bean {@user} \n\n**Optional** \n-bean {@user} {reason}`
+          )
+        )
+        .addSeparatorComponents((divider) => divider)
+        .setAccentColor(embedColor);
 
       await message.reply({
-        embeds: [errorEmbed],
+        components: [erroEmbed],
+        flags: MessageFlags.IsComponentsV2,
       });
     } else {
       let reason = args.slice(1).join(" ") || "No reason provided";

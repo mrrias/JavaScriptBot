@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const { embedColor } = require("../../variables/vars.js");
 const fs = require("fs").promises;
 const path = require("path");
@@ -30,27 +30,32 @@ async function getWaveGif() {
 
 //cmd
 module.exports = {
-  data: new SlashCommandBuilder()
-    .setName("wave")
-    .setDescription("Wave at user")
-    .addUserOption((option) =>
-      option.setName("user").setDescription("user").setRequired(true)
-    ),
+  name: "wave",
 
-  async execute(interaction) {
-    const user = interaction.options.getUser("user");
+  async execute(message) {
+    let user = message.mentions.users.first();
     const waveGif = await getWaveGif();
 
-    await interaction.reply("-# *Loading...*");
+    if (user) {
+      const waveEmbed = new EmbedBuilder()
+        .setDescription(`${message.author} waves at ${user}`)
+        .setImage(waveGif)
+        .setTimestamp()
+        .setColor(embedColor);
 
-    const waveEmbed = new EmbedBuilder()
-      .setDescription(`<@${interaction.user.id}> waves at ${user}`)
-      .setImage(waveGif)
-      .setColor(embedColor);
+      await message.reply({
+        embeds: [waveEmbed],
+      });
+    } else {
+      const waveEmbed = new EmbedBuilder()
+        .setDescription(`${message.author} waves`)
+        .setImage(waveGif)
+        .setTimestamp()
+        .setColor(embedColor);
 
-    await interaction.editReply(`-# Loaded`);
-    await interaction.editReply({
-      embeds: [waveEmbed],
-    });
+      await message.reply({
+        embeds: [waveEmbed],
+      });
+    }
   },
 };
