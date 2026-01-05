@@ -1,3 +1,3 @@
 module.exports = {
-  embedColor: "#FFFFFF",
+  embedColor: 0xffffff,
 };

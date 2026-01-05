@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+const { EmbedBuilder, ContainerBuilder, MessageFlags } = require("discord.js");
 const { embedColor } = require("../../variables/vars.js");
 
 module.exports = {
@@ -27,20 +27,25 @@ module.exports = {
     } else {
       let reason = args.slice(1).join(" ") || "No reason provided";
 
-      const beanEmbed = new EmbedBuilder()
-        .setTitle("User Banned!")
-        .setDescription(`${user} was banned by <@${message.author.id}>`)
-        .addFields(
-          { name: "", value: " " },
-          { name: "Reason", value: reason },
-          { name: "", value: " " }
+      const beanEmbed = new ContainerBuilder()
+        .addTextDisplayComponents((textDisplay) =>
+          textDisplay.setContent(`**User Banned** \n${user}`)
         )
-        .setThumbnail(user.displayAvatarURL({ dynamic: true }))
-        .setTimestamp()
-        .setColor(embedColor);
+        .addSeparatorComponents((divider) => divider)
+        .addTextDisplayComponents((textDisplay) =>
+          textDisplay.setContent(`**Reason** \n${reason}`)
+        )
+        .addSeparatorComponents((divider) => divider)
+        .addTextDisplayComponents((textDisplay) =>
+          textDisplay.setContent(
+            "-# *This command is a joke... no one was banned*"
+          )
+        )
+        .setAccentColor(embedColor);
 
       await message.reply({
-        embeds: [beanEmbed],
+        components: [beanEmbed],
+        flags: MessageFlags.IsComponentsV2,
       });
     }
   },
