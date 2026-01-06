@@ -10,9 +10,12 @@ Today :
         + /high-five
         + /bonk
     
-    - Add -dies
+    + Add -dies
+    + Add -kill
+    - Add -hide
+    - Add -runaway
     - Add /help cmd
-    - Sort files
+    + Sort files
 
 
 
