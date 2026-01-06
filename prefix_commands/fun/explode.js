@@ -41,6 +41,7 @@ module.exports = {
         .setTitle("User Exploded!")
         .setDescription(`<@${message.author.id}> explodes ${user}`)
         .setImage(explodeGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({

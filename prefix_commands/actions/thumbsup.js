@@ -40,6 +40,7 @@ module.exports = {
       const thumbsupEmbed = new EmbedBuilder()
         .setDescription(`${message.author} agrees with ${user}`)
         .setImage(thumbsupGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({
@@ -51,6 +52,7 @@ module.exports = {
           `${message.author} agrees with themeselves \n-# *how sad...*`
         )
         .setImage(thumbsupGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({

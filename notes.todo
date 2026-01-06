@@ -12,14 +12,21 @@ Today :
     
     + Add -dies
     + Add -kill
-    - Add -hide
+    + Add -hide
+    + Add -disappear
+    + Add timestamps
+    - Add -pout
     - Add -runaway
+    - Add -bite 
+    - Add -blush
+    - Add -giggle
     - Add /help cmd
     + Sort files
 
 
 
 Ideas :
+    - Add gambling
     - Search cmd
     - Gif cmd
     - Add sticky msgs

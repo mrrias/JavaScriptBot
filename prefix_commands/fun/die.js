@@ -38,6 +38,7 @@ module.exports = {
     const dieEmbed = new EmbedBuilder()
       .setDescription(`${message.author} dies`)
       .setImage(dieGif)
+      .setTimestamp()
       .setColor(embedColor);
 
     await message.reply({

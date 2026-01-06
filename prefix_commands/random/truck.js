@@ -16,6 +16,7 @@ module.exports = {
         .setImage(
           "https://media.tenor.com/0LwdKsukSe4AAAAM/truck-kun-truck.gif"
         )
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({

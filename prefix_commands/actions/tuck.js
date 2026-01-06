@@ -40,6 +40,7 @@ module.exports = {
       const tuckEmbed = new EmbedBuilder()
         .setDescription(`${message.author} tucks ${user} into bed`)
         .setImage(tuckGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({
@@ -49,6 +50,7 @@ module.exports = {
       const tuckEmbed = new EmbedBuilder()
         .setDescription(`${message.author} tucks themselves into bed`)
         .setImage(tuckGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({

@@ -38,9 +38,8 @@ module.exports = {
 
     if (!user) {
       const doaksEmbed = new EmbedBuilder()
-        .setTitle("You must provide a mention or a valid user ID.")
-        .addFields({ name: "Required:", value: "-doakes {@user}" })
-        .setTimestamp()
+        .setDescription(`${message.author} is always watching`)
+        .setImage(doakesGif)
         .setColor(embedColor);
 
       await message.reply({

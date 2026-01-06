@@ -65,6 +65,7 @@ module.exports = {
       const highfiveEmbed = new EmbedBuilder()
         .setDescription(`${message.author} high fives ${user}`)
         .setImage(highfiveGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({
@@ -76,6 +77,7 @@ module.exports = {
           `${message.author} you can't high five yourself *silly*`
         )
         .setImage(tsundereGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({

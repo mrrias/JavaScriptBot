@@ -40,6 +40,7 @@ module.exports = {
       const bonkEmbed = new EmbedBuilder()
         .setDescription(`${message.author} bonks ${user}`)
         .setImage(bonkGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({
@@ -49,6 +50,7 @@ module.exports = {
       const bonkEmbed = new EmbedBuilder()
         .setDescription(`${message.author} bonks themselves... **ow**`)
         .setImage(bonkGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({

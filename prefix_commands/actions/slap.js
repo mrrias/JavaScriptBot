@@ -65,6 +65,7 @@ module.exports = {
       const slapEmbed = new EmbedBuilder()
         .setDescription(`${message.author} slaps ${user}`)
         .setImage(slapGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({
@@ -76,6 +77,7 @@ module.exports = {
           `${message.author} why are you trying to slap yourself?`
         )
         .setImage(hugGif)
+        .setTimestamp()
         .setColor(embedColor);
 
       await message.reply({
